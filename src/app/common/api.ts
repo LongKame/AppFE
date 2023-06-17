@@ -1,0 +1,1 @@
+export const editURL = 'http://localhost:8081/worker/edit';

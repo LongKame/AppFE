@@ -1,0 +1,36 @@
+<button mat-raised-button color="primary" (click)="openDialog(myDialog)">Update</button>
+<div class="space">
+</div>
+<button mat-raised-button color="accent" (click)="openDialog(myOtherDialog)">Delete</button>
+
+
+<ng-template #myDialog>
+    <h2 matDialogTitle>Dialog Update!</h2>
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)] = "params.data.name">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Dob</mat-label>
+        <input matInput [(ngModel)] = "params.data.dob">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Salary</mat-label>
+        <input matInput [(ngModel)] = "params.data.salary">
+      </mat-form-field>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="accent" (click)="updateData(params.data.id)">Save</button>
+      <button mat-button matDialogClose color="primary">Dismiss</button>
+    </mat-dialog-actions>
+  </ng-template>
+
+
+  <ng-template #myOtherDialog>
+    <h2 matDialogTitle>Dialog Delete!</h2>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="accent" (click)="deleteData(params.data.id)">Delete</button>
+      <button mat-button matDialogClose color="primary">Dismiss</button>
+    </mat-dialog-actions>
+  </ng-template>
